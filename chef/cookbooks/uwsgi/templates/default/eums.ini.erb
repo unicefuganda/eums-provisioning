@@ -1,0 +1,25 @@
+[uwsgi]
+
+# Django-related settings
+# the base directory (full path)
+chdir           = /home/eums/app
+# Django's wsgi file
+module          = wsgi
+# the virtualenv (full path)
+home            = /home/eums/virtualenv/eums
+
+# process-related settings
+# master
+master          = true
+
+# the socket (use the full path to be safe
+socket          = 0.0.0.0:8001
+# ... with appropriate permissions - may be needed
+# chmod-socket    = 664
+# clear environment on exit
+vacuum          = true
+
+pidfile = /var/run/uwsgi/app/eums/pid
+plugins = python
+uid = root
+gid = root
