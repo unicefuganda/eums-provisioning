@@ -13,7 +13,7 @@ execute "Install virtualenv" do
 end
 
 execute "Install Bower" do
-	command "npm install -g bower"
+	command "npm install -g bower grunt-cli"
 end
 
 execute "Put 'node' on path for 'bower install to work'" do

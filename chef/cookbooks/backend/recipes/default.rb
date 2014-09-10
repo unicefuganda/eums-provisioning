@@ -30,15 +30,6 @@ execute "install pip dependencies" do
     action :run
 end
 
-directory "/var/www" do
-	recursive true
-    action :delete
-end
-
-directory "/var/www" do
-    action :create
-end
-
 directory "/var/log/eums" do
         recursive true
         action :delete
@@ -49,7 +40,9 @@ directory "/var/log/eums" do
         action :create
 end
 
-execute "Create link for nginx static files from the app" do
-        command "ln -s /home/eums/app /var/www/eums"
-        action :run
+execute "Link django admin statics to app statics" do
+    cwd "/home/eums/app/eums/client"
+    command "ln -s /home/eums/virtualenv/eums/lib/python2.7/site-packages/django/contrib/admin/static/admin admin"
+    not_if { File.exist?("admin") }
+    action :run
 end
