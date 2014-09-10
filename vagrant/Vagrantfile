@@ -19,7 +19,11 @@ Vagrant.configure("2") do |config|
     chef.roles_path = "../chef/roles"
     chef.add_recipe "tools"
     chef.add_recipe "users"
-    chef.add_recipe "app"    
+    chef.add_recipe "app"  
+    chef.add_recipe "postgres"
+    chef.add_recipe "init_db"
+    chef.add_recipe "nginx"
+    chef.add_recipe "uwsgi"
   end
 
 end
