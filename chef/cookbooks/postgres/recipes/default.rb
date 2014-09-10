@@ -3,15 +3,15 @@ execute "Create default locales for postgres server to use when starting" do
 	action :run
 end
 
-package "postgresql-9.2.4" do
+package "postgresql-9.3" do
 	action :install
 end
 
-template "/etc/postgresql/9.1/main/pg_hba.conf" do
+template "/etc/postgresql/9.3/main/pg_hba.conf" do
   source "pg_hba.conf.erb"
 end
 
-template "/etc/postgresql/9.1/main/postgresql.conf" do
+template "/etc/postgresql/9.3/main/postgresql.conf" do
   source "postgresql.conf.erb"
 end
 
