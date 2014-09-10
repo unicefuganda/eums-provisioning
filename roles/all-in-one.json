@@ -1,0 +1,7 @@
+{
+  "name": "all_in_one",
+  "description": "All in one server for eums",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": []
+}
