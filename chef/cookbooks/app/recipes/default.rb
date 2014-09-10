@@ -23,3 +23,33 @@ execute "create_virtualenv" do
     cwd "/home/eums/virtualenv/"
     command "virtualenv --no-site-packages eums"
 end
+
+execute "install pip dependencies" do
+    cwd "/home/eums/"
+    command "bash -c 'source virtualenv/eums/bin/activate && pip install -r app/requirements.txt'"
+    action :run
+end
+
+directory "/var/www" do
+	recursive true
+    action :delete
+end
+
+directory "/var/www" do
+    action :create
+end
+
+directory "/var/log/eums" do
+        recursive true
+        action :delete
+end
+
+directory "/var/log/eums" do
+        recursive true
+        action :create
+end
+
+execute "Create link for nginx static files from the app" do
+        command "ln -s /home/eums/app /var/www/eums"
+        action :run
+end
