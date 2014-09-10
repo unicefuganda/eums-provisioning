@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "eums"
+
+  # Change this path to point to your own downloaded ubuntu-14.04 vagrant image
+  config.vm.box_url = "~/dev-tools/vagrant/ubuntu-14.04.box"
+  
+  config.vm.network :forwarded_port, guest: 80, host: 80
+
+  
+
+  # All paths relative to Vagrantfile
+
+  # config.vm.provision :chef_solo do |chef|
+  #   chef.cookbooks_path = "../my-recipes/cookbooks"
+  #   chef.roles_path = "../my-recipes/roles"
+  #   chef.data_bags_path = "../my-recipes/data_bags"
+  #   chef.add_recipe "mysql"
+  #   chef.add_role "web"
+  #
+  #   # You may also specify custom JSON attributes:
+  #   chef.json = { :mysql_password => "foo" }
+  # end
+
+end

@@ -12,4 +12,3 @@ git "/home/eums/app" do
 	revision "HEAD"
 	action "sync"
 end
-
