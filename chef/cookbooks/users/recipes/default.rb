@@ -10,3 +10,10 @@ user "eums" do
         home "/home/eums"
         supports :manage_home=>true
 end
+
+directory "/home/eums" do   
+        owner "eums"
+        group "eums"
+        mode "0755"
+        action :create
+end
