@@ -4,11 +4,11 @@
   "json_class": "Chef::Role",
   "chef_type": "role",
   "run_list": [
-  	"recipe[tools]",
-  	"recipe[users]",
-  	"recipe[backend]",
-  	"recipe[web_client]",
-  	"recipe[postgres]",
+    "recipe[tools]",
+    "recipe[users]",
+    "recipe[backend]",
+    "recipe[web_client]",
+    "recipe[postgres]",
     "recipe[init_db]",
     "recipe[nginx]",
     "recipe[uwsgi]"
