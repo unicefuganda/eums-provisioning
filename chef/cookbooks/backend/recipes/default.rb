@@ -1,3 +1,5 @@
+ENV['RAPIDPRO_API_TOKEN'] = "944d243e5a36142b62e4854bb5b275d699314378"
+
 directory "/home/eums/app" do	
 	owner "eums"
 	group "eums"
