@@ -1,5 +1,3 @@
-ENV['RAPIDPRO_API_TOKEN'] = "944d243e5a36142b62e4854bb5b275d699314378"
-
 directory "/home/eums/app" do	
 	owner "eums"
 	group "eums"
@@ -29,6 +27,16 @@ end
 execute "install pip dependencies" do
     cwd "/home/eums/"
     command "bash -c 'source virtualenv/eums/bin/activate && pip install -r app/requirements.txt'"
+    action :run
+end
+
+template "/home/eums/app/initialuser.json" do
+  source "initialuser.erb"
+end
+
+execute "create super user" do
+    cwd "/home/eums/app"
+    command "/home/eums/virtualenv/eums/bin/python manage.py loaddata initialuser.json"
     action :run
 end
 
