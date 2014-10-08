@@ -19,6 +19,10 @@ directory "/home/eums/virtualenv" do
     action :create
 end
 
+execute "set enviroment variable" do
+    command "export COLUMS='100'"
+end
+
 execute "create_virtualenv" do
     cwd "/home/eums/virtualenv/"
     command "virtualenv --no-site-packages eums"
