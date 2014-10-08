@@ -20,7 +20,7 @@ directory "/home/eums/virtualenv" do
 end
 
 execute "set enviroment variable" do
-    command "export COLUMS='100'"
+    command "export COLUMNS='100'"
 end
 
 execute "create_virtualenv" do
