@@ -50,6 +50,11 @@ directory "/var/log/eums" do
         action :create
 end
 
+execute "Remove admin statics" do
+    cwd "/home/eums/app/eums/client"
+    command "admin/admin"
+end
+
 execute "Link django admin statics to app statics" do
     cwd "/home/eums/app/eums/client"
     command "ln -s /home/eums/virtualenv/eums/lib/python2.7/site-packages/django/contrib/admin/static/admin admin"
