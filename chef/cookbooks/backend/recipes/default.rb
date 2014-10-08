@@ -20,6 +20,7 @@ directory "/home/eums/virtualenv" do
 end
 
 execute "set enviroment variable" do
+    cwd "/home/eums/virtualenv/"
     command "export COLUMNS='100'"
 end
 
