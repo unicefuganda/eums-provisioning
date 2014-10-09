@@ -52,7 +52,7 @@ end
 
 execute "Remove admin statics" do
     cwd "/home/eums/app/eums/client"
-    command "admin/admin"
+    command "rm admin/admin"
 end
 
 execute "Link django admin statics to app statics" do
