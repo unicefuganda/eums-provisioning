@@ -1,4 +1,4 @@
-directory "/home/eums/app" do	
+directory "/home/eums/app" do
 	owner "eums"
 	group "eums"
 	mode "0755"
