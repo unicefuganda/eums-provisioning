@@ -5,7 +5,7 @@ Provisioning repo for the End User Monitoring System.
 
 ## Instructions:
 
-1. Esure you have vagrant installed and in good working condition
+1. Esure you have vagrant 1.6.3 installed and in good working condition
 2. Download ubuntu 14.04 vagrant box from <code>https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box</code>
 3. <code>cd /path-to-this-repo/vagrant</code>
 4. <code>vagrant up</code>

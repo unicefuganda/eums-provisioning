@@ -14,6 +14,7 @@ template "/etc/supervisor/supervisord.conf" do
 end
 
 execute "start supervisor" do
+  user "eums"
   command "supervisor -c /etc/supervisor/supervisord.conf"
   action :nothing
 end
