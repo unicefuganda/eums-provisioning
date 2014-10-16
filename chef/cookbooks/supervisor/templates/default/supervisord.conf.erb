@@ -21,10 +21,6 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 [supervisorctl]
 serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 
-[eventlistener:crashmail]
-command=/usr/local/bin/crashmail -a -m ksmith@thoughtworks.com
-events=PROCESS_STATE
-
 
 [program:celery]
 command = /home/eums/virtualenv/eums/bin/celery worker -B --app=eums.celery --loglevel DEBUG
@@ -34,7 +30,7 @@ priority = 50
 redirect_stderr = true
 stdout_logfile=/var/log/uwsgi/app/celeryd.log
 stopsignal = INT
-user = root
+user = eums
 autostart=true
 autorestart=true
 numprocs=1
