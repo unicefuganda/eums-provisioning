@@ -9,7 +9,6 @@
     "recipe[backend]",
     "recipe[web_client]",
     "recipe[postgres]",
-    "recipe[rapidpro_auth]",
     "recipe[init_db]",
     "recipe[nginx]",
     "recipe[uwsgi]",
@@ -17,5 +16,3 @@
     "recipe[supervisor]"
   ]
 }
-
-// "recipe[celery]"
