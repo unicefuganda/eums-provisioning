@@ -3,18 +3,6 @@ execute "Install supervisord" do
   action :run
 end
 
-# %w{supervisor}.each do |pkg|
-#   package pkg do
-#     action :install
-#   end
-# end
-
-# execute "start supervisor" do
-#   user "eums"
-#   command "supervisor -c /etc/supervisor/supervisord.conf"
-#   action :nothing
-# end
-
 template "/etc/supervisord.conf" do
   source "supervisord.conf.erb"
 end
