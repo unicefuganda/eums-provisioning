@@ -1,9 +1,9 @@
 execute "Dummy rapid pro token" do
-	user "eums"
-	command "echo \"export RAPIDPRO_API_TOKEN=''\" > /home/eums/.bash_profile"
+	user "root"
+	command "echo \"RAPIDPRO_API_TOKEN=''\" > /etc/environment"
 end
 
 bash "Source bashrc" do
-	user "eums"
-	command "source /home/eums/.bash_profile"
+	user "root"
+	command "source /etc/environment"
 end

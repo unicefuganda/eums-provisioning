@@ -12,7 +12,7 @@ user "eums" do
   supports :manage_home=>true
 end
 
-directory "/home/eums" do   
+directory "/home/eums" do
   owner "eums"
   group "eums"
   mode "0755"

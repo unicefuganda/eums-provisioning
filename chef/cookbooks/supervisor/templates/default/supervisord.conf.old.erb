@@ -5,12 +5,12 @@ password = supervisor@eums
 
 [unix_http_server]
 file=/tmp/supervisor.sock   ; (the path to the socket file)
-chmod=0700                  ; sockef file mode (default 0700)
+chmod=0700                       ; sockef file mode (default 0700)
 
 [supervisord]
-logfile=/var/log/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
-pidfile=/var/run/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
-childlogdir=/var/log/supervisor            ; ('AUTO' child log dir, default $TEMP)
+logfile=/home/eums/supervisor/supervisord.log ; (main log file;default $CWD/supervisord.log)
+pidfile=/home/eums/supervisor/supervisord.pid ; (supervisord pidfile;default supervisord.pid)
+user=eums
 
 ; the below section must remain in the config file for RPC
 ; (supervisorctl/web interface) to work, additional interfaces may be
@@ -21,20 +21,13 @@ supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
 [supervisorctl]
 serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 
-[eventlistener:crashmail]
-command=/usr/local/bin/crashmail -a -m ksmith@thoughtworks.com
-events=PROCESS_STATE
-
-
 [program:celery]
-command = /home/eums/virtualenv/eums/bin/celery worker -B --app=eums.celery --loglevel DEBUG
+command =/home/eums/virtualenv/eums/bin/celery worker -B --app=eums.celery
 process_name = eums_celery
 directory = /home/eums/app/
-priority = 50
 redirect_stderr = true
 stdout_logfile=/var/log/uwsgi/app/celeryd.log
 stopsignal = INT
-user = root
+user = eums
 autostart=true
 autorestart=true
-numprocs=1

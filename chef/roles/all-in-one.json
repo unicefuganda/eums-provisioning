@@ -13,6 +13,9 @@
     "recipe[init_db]",
     "recipe[nginx]",
     "recipe[uwsgi]",
+    "recipe[redis-server]",
     "recipe[supervisor]"
   ]
 }
+
+// "recipe[celery]"

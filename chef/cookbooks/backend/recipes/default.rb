@@ -30,8 +30,6 @@ execute "install pip dependencies" do
     action :run
 end
 
-
-
 directory "/var/log/eums" do
         recursive true
         action :delete

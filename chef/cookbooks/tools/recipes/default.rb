@@ -9,7 +9,7 @@ end
 end
 
 execute "Install virtualenv" do
-    command "pip install virtualenv"
+  command "pip install virtualenv"
 end
 
 execute "Install Bower" do

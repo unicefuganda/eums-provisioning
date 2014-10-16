@@ -1,7 +1,7 @@
-# execute "Migrate database" do
+# bash "Migrate database" do
 # 	user "eums"
 # 	cwd "/home/eums/app"
-#    	command "bash -c 'source /home/eums/virtualenv/eums/bin/activate && ./manage.py migrate --noinput'"
+#    	command "source /home/eums/virtualenv/eums/bin/activate && ./manage.py migrate --noinput"
 #    	action :run
 # end
 
