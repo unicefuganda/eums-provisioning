@@ -3,7 +3,8 @@
   "description": "All in one server for eums",
   "json_class": "Chef::Role",
   "default_attributes": {
-    "grunt_command": "build-staging"
+    "grunt_command": "build-staging",
+    "celery_settings": "eums.staging_settings"
   },
   "chef_type": "role",
   "run_list": [

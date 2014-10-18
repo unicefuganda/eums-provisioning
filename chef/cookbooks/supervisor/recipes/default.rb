@@ -11,6 +11,13 @@ template "/etc/init.d/supervisord" do
   source "supervisord.erb"
 end
 
+template "/home/eums/app/eums/celery.py" do
+  source "celery.py.erb"
+  variables({
+     :celery_settings => node['celery_settings']
+  })
+end
+
 file "/etc/init.d/supervisord" do
   mode "0755"
   action :touch
@@ -25,4 +32,9 @@ end
 
 service "supervisord" do
   action :start
+end
+
+execute "Start celery" do
+  command "sudo supervisorctl start celery:eums_celery"
+  action :run
 end
