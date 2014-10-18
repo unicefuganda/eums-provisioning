@@ -25,5 +25,5 @@ directory "/var/www/sockets" do
 end
 
 service "uwsgi" do
-	action :start
+	action :restart
 end

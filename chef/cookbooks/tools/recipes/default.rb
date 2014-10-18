@@ -13,10 +13,10 @@ execute "Install virtualenv" do
 end
 
 execute "Install Bower" do
-	command "npm install -g bower grunt-cli"
+  command "npm install -g bower grunt-cli"
 end
 
 execute "Put 'node' on path for 'bower install to work'" do
-	command "ln -s /usr/bin/nodejs /usr/bin/node"
-	not_if { File.exist?("/usr/bin/node") }
+  command "ln -s /usr/bin/nodejs /usr/bin/node"
+  not_if { File.exist?("/usr/bin/node") }
 end

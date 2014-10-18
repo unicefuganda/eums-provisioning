@@ -2,6 +2,9 @@
   "name": "all_in_one",
   "description": "All in one server for eums",
   "json_class": "Chef::Role",
+  "default_attributes": {
+    "grunt_command": "build"
+  },
   "chef_type": "role",
   "run_list": [
     "recipe[tools]",
@@ -12,7 +15,7 @@
     "recipe[init_db]",
     "recipe[nginx]",
     "recipe[uwsgi]",
-    "recipe[redis-server]",
+    "recipe[redis]",
     "recipe[supervisor]"
   ]
 }

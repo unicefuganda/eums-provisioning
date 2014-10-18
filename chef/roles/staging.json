@@ -1,0 +1,13 @@
+{
+  "name": "staging",
+  "description": "Staging setup for eums",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+    "grunt_command": "build-staging"
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[tools]",
+    "recipe[users]",
+  ]
+}
