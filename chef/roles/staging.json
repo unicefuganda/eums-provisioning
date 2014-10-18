@@ -1,6 +1,6 @@
 {
-  "name": "staging",
-  "description": "Staging setup for eums",
+  "name": "all_in_one",
+  "description": "All in one server for eums",
   "json_class": "Chef::Role",
   "default_attributes": {
     "grunt_command": "build-staging"
@@ -9,5 +9,13 @@
   "run_list": [
     "recipe[tools]",
     "recipe[users]",
+    "recipe[backend]",
+    "recipe[web_client]",
+    "recipe[postgres]",
+    "recipe[init_db]",
+    "recipe[nginx]",
+    "recipe[uwsgi]",
+    "recipe[redis]",
+    "recipe[supervisor]"
   ]
 }
