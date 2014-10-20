@@ -10,13 +10,13 @@
   "run_list": [
     "recipe[tools]",
     "recipe[users]",
-    "recipe[backend]",
-    "recipe[web_client]",
-    "recipe[postgres]",
-    "recipe[init_db]",
     "recipe[nginx]",
     "recipe[uwsgi]",
     "recipe[redis]",
-    "recipe[supervisor]"
+    "recipe[postgres]",
+    "recipe[supervisor]",
+    "recipe[backend]",
+    "recipe[init_db]",
+    "recipe[web_client]"
   ]
 }

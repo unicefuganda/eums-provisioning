@@ -33,8 +33,3 @@ end
 service "supervisord" do
   action :start
 end
-
-execute "Start celery" do
-  command "sudo supervisorctl start celery:eums_celery"
-  action :run
-end
