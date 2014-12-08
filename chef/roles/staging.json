@@ -1,22 +1,22 @@
 {
-  "name": "all_in_one",
-  "description": "All in one server for eums",
-  "json_class": "Chef::Role",
-  "default_attributes": {
-    "grunt_command": "build-staging",
-    "celery_settings": "eums.staging_settings"
-  },
-  "chef_type": "role",
-  "run_list": [
-    "recipe[tools]",
-    "recipe[users]",
-    "recipe[nginx]",
-    "recipe[uwsgi]",
-    "recipe[redis]",
-    "recipe[postgres]",
-    "recipe[supervisor]",
-    "recipe[backend]",
-    "recipe[init_db]",
-    "recipe[web_client]"
-  ]
+    "name": "all_in_one",
+    "description": "All in one server for eums",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+        "grunt_command": "build-staging",
+        "celery_settings": "eums.staging_settings"
+    },
+    "chef_type": "role",
+    "run_list": [
+        "recipe[tools]",
+        "recipe[users]",
+        "recipe[redis]",
+        "recipe[postgres]",
+        "recipe[backend]",
+        "recipe[init_db]",
+        "recipe[web_client]",
+        "recipe[nginx]",
+        "recipe[uwsgi]",
+        "recipe[supervisor]"
+    ]
 }
