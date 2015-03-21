@@ -13,11 +13,6 @@ git "/home/eums/app" do
 	action "sync"
 end
 
-execute "Stop celery before creating virtualenv" do
-  command "sudo supervisorctl stop celery:eums_celery"
-  action :run
-end
-
 directory "/home/eums/virtualenv" do
     owner "eums"
     group "eums"
@@ -33,11 +28,6 @@ execute "install pip dependencies" do
     cwd "/home/eums/"
     command "bash -c 'source virtualenv/eums/bin/activate && pip install -r app/requirements.txt'"
     action :run
-end
-
-execute "Start celery" do
-  command "sudo supervisorctl start celery:eums_celery"
-  action :run
 end
 
 directory "/var/log/eums" do
