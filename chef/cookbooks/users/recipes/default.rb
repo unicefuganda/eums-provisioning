@@ -1,20 +1,20 @@
-user "eums" do
+user "www-data" do
   action :create
-  home "/home/eums"
+  home "/var/www"
   system true
   #remove this.
-  password "$1$.WsplVWP$vZGPs6vxS0FmQ0dh83M541"
+  password "$1$.WsplVWP$vZGPs6vxS0FmQ0dh83M541"  
 end
 
-user "eums" do
+user "www-data" do
   action :modify
-  home "/home/eums"
+  home "/var/www"
   supports :manage_home=>true
 end
 
-directory "/home/eums" do
-  owner "eums"
-  group "eums"
+directory "/var/www" do
+  owner "www-data"
+  group "www-data"
   mode "0755"
   action :create
 end

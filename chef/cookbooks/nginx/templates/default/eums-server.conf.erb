@@ -17,12 +17,12 @@ server {
     client_max_body_size 75M;   # adjust to taste
 
     location /static {
-        alias /home/eums/app/eums/client/;
+        alias /var/www/eums/eums/client/;
     }
 
     location / {
         uwsgi_pass django;
-        include /home/eums/app/eums/uwsgi_params;
+        include /var/www/eums/eums/uwsgi_params;
     }
 
     location /contacts/ {

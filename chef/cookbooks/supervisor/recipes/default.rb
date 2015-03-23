@@ -11,7 +11,7 @@ template "/etc/init.d/supervisord" do
   source "supervisord.erb"
 end
 
-template "/home/eums/app/eums/celery.py" do
+template "/var/www/eums/eums/celery.py" do
   source "celery.py.erb"
   variables({
      :celery_settings => node['celery_settings']
@@ -24,8 +24,8 @@ file "/etc/init.d/supervisord" do
 end
 
 directory "/var/log/supervisor" do
-  owner "eums"
-  group "eums"
+  owner "www-data"
+  group "www-data"
   mode "0755"
   action :create
 end
