@@ -11,7 +11,7 @@ template "/etc/init.d/supervisord" do
   source "supervisord.erb"
 end
 
-template "/var/www/eums/somalia/eums/celery.py" do
+template "/var/www/eums/zimbabwe/eums/celery.py" do
   source "celery.py.erb"
   variables({
      :celery_settings => node['celery_settings']

@@ -23,9 +23,9 @@ serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
 
 
 [program:celery]
-command = /var/www/env/eums/bin/celery worker -B --app=eums.celery --loglevel DEBUG
+command = /var/www/env/zimbabweEums/bin/celery worker -B --app=eums.celery --loglevel DEBUG
 process_name = eums_celery
-directory = /var/www/somalia/eums/
+directory = /var/www/zimbabwe/eums/
 priority = 50
 redirect_stderr = true
 stdout_logfile=/var/log/uwsgi/app/celeryd.log
