@@ -4,7 +4,7 @@ RAPIDPRO_API_TOKEN=$1
 IP=$2
 MAILGUN_API_KEY=$3
 
-mkdir -p /home/staging-files && cd /home/staging-files
+mkdir -p /var/www/eums-config && cd /var/www/eums-config
 
 # Create overrides for python settings
 echo "RAPIDPRO_LIVE = True" > settings.py
